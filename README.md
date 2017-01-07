@@ -1,7 +1,8 @@
 # 2017 EPSCoR GRA Proposal (24k)
 
-### timeline
+### Checklist
 Due January 23rd
+
 TODO:
 
 [ ] Proposal
