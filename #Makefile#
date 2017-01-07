@@ -11,13 +11,13 @@ clean:
 	rm -f *.aux *.log *.bbl *.blg *.lof *.lot *.toc *options.tex
 
 
-update: scsg=gra_2017_jrp
+update: scsg=gra_2017_proposal_jrp
 update: 
 	pdflatex $(scsg); \
 	open $(scsg).pdf
 
 
-scsg: scsg=gra_2017_jrp
+scsg: scsg=gra_2017_proposal_jrp
 scsg: 
 	pdflatex $(scsg); \
 	bibtex $(scsg); \
