@@ -45,7 +45,7 @@ package called Supernova Time Delays ($\packageName$). \textbf{This package will
 lead to an improved understanding of the complex effects acting on 
 known and future multiply-imaged SNe.}
 There are currently two software packages that form the basis 
-of this product: Python Curve Shifting (PyCS), and Supernova Cosmology 
+of this product: Python Curve Shifting (PyCS) used for quasars, and Supernova Cosmology 
 (SNCosmo). There will be four components to this research: 1) Integrate 
 SNCosmo and PyCS, giving researchers a tool
 that can model SN light curve data with the abilities present in either
@@ -67,20 +67,20 @@ microlensing of quasars caused by transverse motion of stars in the
 lensing galaxy, there is a second form of microlensing unique to
 lensed SNe. The expanding photosphere of a SN interacts with an 
 increasing volume of the caustic web, precipitating microlensing effects 
-described by \cite{Dobler:2006} that can exhibit magnitude 
+described by \cite{Dobler:2006} that can cause magnitude 
 fluctuations of $\sim$0.2 to $>$0.5 on timescales of weeks to months. 
 This proposed work has already integrated the flexible function method 
 (Figure 2), and will seek to include both types of microlensing effects to 
 increase the precision and accuracy of time delay and magnification measurements. 
 \textbf{No software package currently
 exists with this capability}, therefore the algorithm will be developed
-following the methodology of \cite{Dobler:2006}. In general,
-$\packageName$ will be much more likely to correctly identify SN
-microlensing effects and produce simpler time delay measurements
-because, unlike for quasars, researchers already have a robust set of
+following the methodology of \cite{Dobler:2006}. Unlike for quasars, 
+researchers already have a robust set of
 intrinsic light curve shapes to describe a range of different SN
-classes that will allow for physically motivated, less flexible
-models. By allowing certain constraints to float as free parameters,
+classes. This will allow for physically motivated, less flexible
+models that will be more likely than PyCS to correctly identify SN
+microlensing effects and produce simpler time delay measurements.
+By allowing certain constraints to float as free parameters,
 these models will also produce best-fit synthetic light curves from
 which time delay, magnifications, SN class, and redshift can be
 derived. By simulating large numbers of SNe with these synthetic light
