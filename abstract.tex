@@ -12,19 +12,20 @@
 \rhead{\bf Justin D. Roberts-Pierel, University of South Carolina}
 
 Observing and understanding gravitationally lensed objects is a new
-and exciting field of study. The first example of a strongly lensed
+and exciting field of study. The first examples of a strongly lensed
 supernova (SN) resolved into multiple images was SN ``Refsdal'' in
 2014 (Figure 1; \citet{Kelly:2015a}). Subsequent work was done to
 classify Refsdal, as well as to measure time delays and magnification
-ratios \citep{Kelly:2016,Rodney:2016}. To date, there is no optimally
-designed software package to analyze correlated data sets from
-multiply imaged lensed SNe and simultaneously determine SN class, time
-delays, and magnification ratios. The lack of a standard resource
-leaves researchers to write and implement their own ad hoc programs,
-which increases uncertainty and decreases efficiency. It's clear that
-an optimized software package with the ability to analyze a light
-curve for these and other parameters would be extremely valuable to a
-wide range of research using current and next generation telescopes.
+ratios \citep{Kelly:2016,Rodney:2016}. Another lensed Type 1a SN was found
+by \cite{Goobar:2016}, and the next decade is expected to yield observations
+of over 100 lensed SNe that will require analysis (\cite{Oguri:2010}).
+To date, there is no public software package for analyzing multiply-imaged SNe. 
+The lack of a standard resource leaves researchers to write and implement their 
+own ad hoc programs, which will become increasingly inefficient as the number of
+observed lensed SNe increases. 
+An optimized software package with the ability to analyze a light curve for 
+these and other parameters would be extremely valuable to a wide range of
+ research using current and next generation telescopes.
 
 \begin{figure}[h]
 \centering
@@ -33,50 +34,53 @@ wide range of research using current and next generation telescopes.
 MACS J1149.6+2223 field, showing the positions of the three primary
 images of the SN Refsdal host galaxy (labeled 1.1, 1.2, and 1.3). SN
 Refsdal appears as four point sources in an Einstein Cross
-configuration in the southeast spiral arm of image 1.1 (2)}
+configuration in the southeast spiral arm of image 1.1 \cite{Rodney:2016}}
 \end{figure}
 
-The purpose of this work is to produce an open-source software
-package called Supernova Time Delays ($\packageName$) that will
-address the SN modeling needs of the research community and lead to a
-first-author publication that furthers our understanding of lensed
-SNe. There are currently two software packages, written in Python,
-which are relevant to this product: Python Curve Shifting (PyCS), and
-Supernova Cosmology (SNCosmo). There will be four components to this
-research: 1) Integrate SNCosmo and PyCS, giving researchers a tool
-that can model SN light curve data with the tools present in either
-software package; 2) Extend and optimize lensing and microlensing
-algorithm present in PyCS for SNe; 3) Simulate a large number of SN
+
+The purpose of this work is to produce an open-source software
+package called Supernova Time Delays ($\packageName$). This package will
+lead to an improved understanding of the complex effects acting on 
+the two known multiply-imaged SNe, and prepare for the need to analyze 
+lensed SNe over the next decade.
+There are currently two software packages that form the basis 
+of this product: Python Curve Shifting (PyCS), and Supernova Cosmology 
+(SNCosmo). There will be four components to this research: 1) Integrate 
+SNCosmo and PyCS, giving researchers a tool
+that can model SN light curve data with the abilities present in either
+software package; 2) Extend and optimize the lensing and microlensing
+algorithm present in PyCS for SNe; 3) Simulate a large number of multiply-imaged SN
 light curves using SNCosmo and test the ability of $\packageName$ to
 determine SN parameters; and 4) Explore the abilities of
 $\packageName$ in analyzing POP III SNe using modeled light curves in
 anticipation of JWST and WFIRST observations.
-
 %\begin{figure}[h]
 %\centering
 %\includegraphics[scale=.38]{gra_2017_Flow2.pdf}
 %\caption{A visual representation of the capabilities of SNTD. The python package will have a simple framework in which each module creates a respective object, which can then be edited by the user. This structure is extremely organized, computationally efficient, and user-friendly.}
 %\end{figure}
 
-While PyCS currently uses flexible functions to account for
+
+While PyCS currently uses flexible functions to account for
 microlensing of quasars caused by transverse motion of stars in the
 lensing galaxy, there is a second form of microlensing unique to
-lensed SNe. The expanding photosphere of a SN interacts with
-intervening matter, causing microlensing effects described by Dobler
-and Keeton 2006a that can exhibit magnitude fluctuations of $\sim$0.2
-to $>$0.5 on timescales of weeks to months. This proposed work has
-already integrated the flexible function method (Figure 2), and will
-seek to include both types of microlensing effects to increase the
-precision of time delay measurements. No software package currently
+lensed SNe. The expanding photosphere of a SN interacts with an 
+increasing volume of the caustic web, precipitating microlensing effects 
+described by \cite{Dobler:2006} that can exhibit magnitude 
+fluctuations of $\sim$0.2 to $>$0.5 on timescales of weeks to months. 
+This proposed work has already integrated the flexible function method 
+(Figure 2), and will seek to include both types of microlensing effects to 
+increase the precision and accuracy of time delay and magnification measurements. 
+No software package currently
 exists with this capability, therefore the algorithm will be developed
-following the methodology of Dobler and Keeton 2006a. In general,
+following the methodology of \cite{Dobler:2006}. In general,
 $\packageName$ will be much more likely to correctly identify SN
 microlensing effects and produce simpler time delay measurements
 because, unlike for quasars, researchers already have a robust set of
 intrinsic light curve shapes to describe a range of different SN
 classes that will allow for physically motivated, less flexible
 models. By allowing certain constraints to float as free parameters,
-these models will also produce best-fit synthetic light curves, from
+these models will also produce best-fit synthetic light curves from
 which time delay, magnifications, SN class, and redshift can be
 derived. By simulating large numbers of SNe with these synthetic light
 curves, we will be able to quantify the accuracy and efficiency of the
@@ -97,12 +101,14 @@ software.
 %perturbations from these templates.}
 %\end{figure}
 
- The era of JWST will yield a drastic increase SN observations at
-z$<$5 (4), and WFIRST will arrive shortly thereafter in the mid
-2020s. In addition, recent simulations of PI SN light curves indicate
+
+ The era of JWST will make it possible for the first time to detect and study SNe 
+ at $z>5$ (\cite{Mesinger:2006}), and WFIRST will add many more discoveries at lower redshift 
+ with a larger field of view in the mid-2020s . 
+In addition, recent simulations of pair-instability (PI) SN light curves indicate
 that various solar mass PI and POP III Type IIn SNe will be visible to
 both JWST (z$>$30 and z$\sim$15 respectively) and WFIRST (z$\sim$20
-and z$\sim$5 respectively) (5). Whether it is a follow-up observation
+and z$\sim$5 respectively) (\cite{Magg:2016}). Whether it is a follow-up observation
 of a ground based detection, or a discovery made by one of these space
 telescopes, having flexible software in place to analyze any SN light
 curve will be essential to SN cosmologists. We expect this research to
@@ -110,27 +116,32 @@ yield multiple publications about the methodology of the software
 itself and the simulation results for low and high redshift SNe, as
 well as advancements in our understanding of lensed SNe resulting from
 the use of $\packageName$. There are also plans to use this package
-for follow-up measurements of SN Refsdal and the PTF Type Ia SN
+for follow-up measurements of the two known multiply-imaged SN
 parameters, including the previously ignored microlensing
 effects. $\packageName$ will be written in Python, a free and
 open-source programming language, and distributed to SN researchers
 with extensive documentation including descriptive tutorials. This
 combination will make $\packageName$ a free, widely accessible, and
-invaluable tool in the SN research community.  \begin{figure}[h]
+invaluable tool in the SN research community.  
+\begin{figure}[h]
 
 \centering
 \includegraphics[width=.78\textwidth]{points_plot_2017.pdf}
 \includegraphics[width=.78\textwidth]{refs_plot_2017.pdf}
 \includegraphics[width=.78\textwidth]{spline_plot_2017.pdf}
-\caption{(Top) Colorized are the F160W data representing the four images of SN
+\caption{(Top) HST F160W data representing the four images of SN
 Refsdal (Figure 1), with no lensing or time shifts. (Middle) Method of
-fitting the SN Refsdal light curves from Rodney et al. 2016 (Bottom)
-Preliminary results from $\packageName$ using a multi-knot spline to
-fit the data, with lensing and time delays considered. }
+fitting the SN Refsdal light curves from Rodney et al. 2016, which did
+not consider microlensing effects. (Bottom) Preliminary results from 
+$\packageName$ using a multi-knot spline to fit the data. This method 
+includes microlensing effects, which leads to a slight adjustment in 
+time delay measurements. }
 \end{figure}
-\pagebreak
+
+\pagebreak
 \bibliographystyle{apjbrief}
-\bibliography{bibdesk}
+
+\bibliography{bibdesk}
 
 %\
 
@@ -170,7 +181,10 @@ fit the data, with lensing and time delays considered. }
 
 
 
-
+
+
+
+
 
 
 
